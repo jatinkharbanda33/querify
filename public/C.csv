@@ -1,0 +1,10 @@
+EmployeeID,Position,title,City,State,Pincode,Country
+1,Sales Representative,Ms.,Seattle,WA,98122,USA
+2,Vice President Sales,Dr.,Tacoma,WA,98401,USA
+3,Sales Representative,Ms.,Kirkland,WA,98033,USA
+4,Sales Representative,Mrs.,Redmond,WA,98052,USA
+5,Sales Manager,Mr.,London,NULL,SW1 8JR,UK
+6,Sales Representative,Mr.,London,NULL,EC2 7JR,UK
+7,Sales Representative,Mr.,London,NULL,RG1 9SP,UK
+8,Inside Sales Coordinator,Ms.,Seattle,WA,98105,USA
+9,Sales Representative,Ms.,London,NULL,WG2 7LT,UK
