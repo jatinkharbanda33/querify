@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { readRemoteFile } from "react-papaparse";
+
 const CSVTable = ({ result }) => {
   const [data, setData] = useState([]);
   const [header, setHeader] = useState([]);
+
   useEffect(() => {
     if (
       result == "A" ||
@@ -20,8 +22,23 @@ const CSVTable = ({ result }) => {
     }
   }, [result]);
 
+  if (!result || result === "X") {
+    return (
+      <div className="flex w-11/12 h-5/6 overflow-auto scrollbar-thumb-slate-400 justify-center  scrollbar-track-gray-400 bg-white m-8 border-solid border-2 border-stone-600">
+        <div className="my-36">
+        <img
+        className="relative"
+          src="https://img.icons8.com/external-tulpahn-outline-color-tulpahn/64/external-ninja-japan-tulpahn-outline-color-tulpahn.png"
+          alt="Query image"
+        />
+        <p>Run a Query</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="relative w-11/12 h-5/6 overflow-auto bg-white m-8 border-solid border-2 border-stone-600">
+    <div className="relative w-11/12 h-5/6 overflow-auto scrollbar-thumb-slate-400  scrollbar-track-gray-400 bg-white m-8 border-solid border-2 border-stone-600">
       <table className="table-auto w-full ">
         <thead className="bg-gray-50 border-b-2 border-gray-200">
           <tr>
