@@ -1,20 +1,27 @@
 import React, { useState } from "react";
 
 const QueryArea = ({ text, setText }) => {
-  const handleInputChange = (event) => {
+ const [charCount, setCharCount] = useState(0);
+
+ const handleInputChange = (event) => {
+  if (event.target.value.length <= 10000) {
     setText(event.target.value);
-  };
-  return (
-    <>
-      <div className="flex w-11/12 h-4/5 m-8 border-solid border-2 border-stone-600 rounded-md bg-white">
-        <textarea
-          className="relative w-full ml-2 h-full focus:outline-none focus:shadow-outline"
-          value={text}
-          onChange={handleInputChange}
-        />
-      </div>
-    </>
-  );
+    setCharCount(event.target.value.length);
+  }
+ };
+
+ return (
+  <>
+    <div className="flex w-full h-[35vh] my-8 border-solid border-2 border-stone-600 rounded-md bg-white relative p-3">
+      <textarea
+        className="relative w-full h-full focus:outline-none focus:shadow-outline"
+        value={ text}
+        onChange={handleInputChange}
+      />
+      <span className="absolute bottom-2 right-2">{charCount} / 10000</span>
+    </div>
+  </>
+ );
 };
 
 export default QueryArea;

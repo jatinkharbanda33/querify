@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       boxShadow: {
         glow: '0 0 10px #FBBF24, 0 0 15px #FBBF24'
+      },
+      fontFamily: {
+        'open-sans': ['Open Sans', 'sans-serif'],
       }
     },
     

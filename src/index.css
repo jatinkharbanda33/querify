@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+*{  
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    
+}
+
+body {
+    box-sizing: border-box;
+}
+.bg-gr
+ad{
+  
+
+    /* global 92%+ browsers support */
+    background: radial-gradient(ellipse at 2% 0%, rgba(0, 255, 238, 0.43) 0%, rgba(190, 130, 238, 0) 100%);
+
+
+}

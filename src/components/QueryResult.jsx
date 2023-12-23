@@ -25,13 +25,13 @@ const CSVTable = ({ result }) => {
   if (!result || result === "X") {
     return (
       <div className="flex w-11/12 h-5/6 overflow-auto scrollbar-thumb-slate-400 justify-center  scrollbar-track-gray-400 bg-white m-8 border-solid border-2 border-stone-600">
-        <div className="my-36">
+        <div className="my-[10rem]">
         <img
-        className="relative"
+        className="relative ml-3"
           src="https://img.icons8.com/external-tulpahn-outline-color-tulpahn/64/external-ninja-japan-tulpahn-outline-color-tulpahn.png"
           alt="Query image"
         />
-        <p>Run a Query</p>
+        <p className="font-semibold">Run a Query</p>
         </div>
       </div>
     );

@@ -34,7 +34,7 @@ const QueryButton = ({
     
     <button
       type="button"
-      className="text-white bg-gradient-to-r from-cyan-500 to-blue-500  ease-in-out hover:bg-gradient-to-bl  focus:outline-none  font-medium rounded-lg h-10 text-sm px-4 text-center me-2"
+      className="transition delay-50 hover:scale-110 text-white bg-[#2026d2]  ease-in-out hover:bg-gradient-to-bl focus:outline-none  font-medium rounded-lg h-10 text-sm px-4 text-center me-2"
       onClick={handleClick}
 
     >
