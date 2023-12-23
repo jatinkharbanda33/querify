@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Hero from "./pages/Hero";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
 import Footer from "./components/Footer";
@@ -15,11 +15,7 @@ function App() {
        <Routes>
          <Route path="/about" element={<About />}/>
          <Route path="/blog" element={<Blogs />}/>
-           
-        
-         <Route path="/" element={<Hero />}/>
-
-         
+         <Route path="/" element={<Hero />}/> 
        </Routes>
        <Footer/>
      </div>

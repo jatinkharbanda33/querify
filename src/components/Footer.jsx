@@ -1,10 +1,10 @@
 export default function Footer() {
-	const year = new Date().getFullYear()
+	const year = new Date().getFullYear();
 	return (
-		<footer className='footer footer-center p-4 bg-base-300 text-base-content fixed inset-x-0 bottom-0 hidden lg:block'>
-			<div>
-				<p>Copyright © {year} - Made by Jatin Kharbanda ❤️</p>
-			</div>
-		</footer>
-	)
-}
+	  <footer className={`footer flex items-center justify-center p-4 dark:bg-gray-800 dark:text-white bg-gray-200 text-gray-700 inset-x-0 mb-0`}>
+		<div>
+		  <p>Copyright © {year} - Made by Jatin Kharbanda ❤️</p>
+		</div>
+	  </footer>
+	);
+   }

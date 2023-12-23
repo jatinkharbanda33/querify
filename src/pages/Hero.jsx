@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import QueryArea from "./QueryArea";
-import CSVTable from "./QueryResult";
-import QueryButton from "./QueryButton";
+import QueryArea from "../components/QueryArea";
+import CSVTable from "../components/QueryResult";
+import QueryButton from "../components/QueryButton";
 const Hero = () => {
-  const [result, setResult] = useState("A");
-  const [text, setText] = useState("SELECT * FROM EMPLOYEES");
+  const [result, setResult] = useState("D");
+  const [text, setText] = useState("select employeeid,lastname,firstname,address,city from employees");
   const handleRun = () => {
     if (text.trim() == "") {
       setResult("X");
@@ -39,9 +39,9 @@ const Hero = () => {
     setText(clipboardText);
   };
   return (
-    <div className="flex flex-col xl:flex-row items-center justify-around w-full">
-      <div className="w-full p-2 lg:w-[80vw] xl:w-2/5 h-full ">
-          <h1 className="flex justify-center font-bold text-2xl -mb-4">
+    <div className="flex flex-col xl:flex-row items-center justify-around w-full dark:bg-[#282A36] pb-[1.05rem]">
+      <div className="w-full p-2 lg:w-[80vw] xl:w-2/5 h-full">
+          <h1 className="flex justify-center font-bold text-2xl -mb-4 dark:text-white">
             Query
           </h1>
       
@@ -79,7 +79,7 @@ const Hero = () => {
       </div>
 
       <div className="w-full my-5 lg:w-[90vw] xl:w-3/6 h-[75vh] ">
-        <h1 className="flex justify-center font-bold text-2xl -mb-4">Result</h1>
+        <h1 className="flex justify-center font-bold text-2xl -mb-4 dark:text-white">Result</h1>
         <CSVTable result={result} />
       </div>
     </div>
