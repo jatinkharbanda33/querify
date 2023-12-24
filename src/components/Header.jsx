@@ -64,6 +64,7 @@ const Header = () => {
           <div className="text-sm flex-grow">
             <NavLink
               to="/"
+              onClick={()=>{setMenuOpen(false)}}
               className={({ isActive }) =>
                 isActive
                   ? "text-lg block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 text-white"
@@ -74,6 +75,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               to="/about"
+              onClick={()=>{setMenuOpen(false)}}
               className={({ isActive }) =>
                 isActive
                   ? "text-lg block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 text-white"
@@ -84,6 +86,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               to="/blog"
+              onClick={()=>{setMenuOpen(false)}}
               className={({ isActive }) =>
                 isActive
                   ? "text-lg block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 text-white"
