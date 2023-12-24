@@ -9,20 +9,20 @@ const Hero = () => {
   const handleRun = () => {
     if (text.trim() == "") {
       setResult("X");
-    } else if (text.toLowerCase() == "select * from employees") {
+    } else if (text.toLowerCase() === "select * from employees") {
       setResult("A");
     } else if (
-      text.toLowerCase() ==
+      text.toLowerCase() ===
       "select employeeid,lastname,firstname from employees"
     ) {
       setResult("B");
     } else if (
-      text.toLowerCase() ==
+      text.toLowerCase() ===
       "select employeeid,position,title,city,state,pincode,country from employees"
     ) {
       setResult("C");
     } else if (
-      text.toLowerCase() ==
+      text.toLowerCase() ===
       "select employeeid,lastname,firstname,address,city from employees"
     ) {
       setResult("D");
@@ -78,8 +78,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full my-5 lg:w-[90vw] xl:w-3/6 h-[75vh] ">
-        <h1 className="flex justify-center font-bold text-2xl -mb-4 dark:text-white">Result</h1>
+      <div className="w-full p-2 lg:w-[80vw] xl:w-5/12 h-full">
+        <h1 className="flex justify-center font-bold text-2xl -mb-2 dark:text-white">Result</h1>
         <CSVTable result={result} />
       </div>
     </div>

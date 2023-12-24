@@ -1,31 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { readRemoteFile } from "react-papaparse";
 
-const CSVTable = ({ result }) => {
+const CSVTable = memo(({ result }) => {
   const [data, setData] = useState([]);
   const [header, setHeader] = useState([]);
-
+  const [loading, setLoading] = useState(false); // New loading state
+ 
   useEffect(() => {
+    setLoading(true); // Start loading
     if (
-      result == "A" ||
-      result == "B" ||
-      result == "C" ||
-      result == "D" ||
-      result == "E"
+      result === "A" ||
+      result === "B" ||
+      result === "C" ||
+      result === "D" ||
+      result === "E"
     ) {
       readRemoteFile(process.env.PUBLIC_URL + `/${result}.csv`, {
         complete: (results) => {
           setData(results.data.slice(1));
-          setHeader(results.data);
+          setHeader(results.data[0]);
+          setLoading(false); // End loading
         },
       });
+    } else {
+      setLoading(false); // End loading if result is "X"
     }
   }, [result]);
+ if(loading){
+  return <div className="flex w-full h-[65vh] relative p-3 my-8 overflow-auto items-center justify-center scrollbar-thumb-slate-400  scrollbar-track-gray-400 bg-white border-solid border-2 border-stone-600 dark:bg-[#31304D]">Loading</div>
+ }
 
   if (!result || result === "X") {
     return (
-      <div className="flex w-11/12 h-5/6 overflow-auto scrollbar-thumb-slate-400 justify-center  scrollbar-track-gray-400 bg-white m-8 border-solid border-2 border-stone-600 dark:bg-[#282A36]">
-        <div className="my-[10rem]">
+      <div className="flex w-full h-[65vh] relative p-3 my-8 justify-center items-center verflow-auto scrollbar-thumb-slate-400  scrollbar-track-gray-400 bg-white border-solid border-2 border-stone-600 dark:bg-[#31304D]">
+        <div className="">
         <img
         className="relative ml-3"
           src="https://img.icons8.com/external-tulpahn-outline-color-tulpahn/64/external-ninja-japan-tulpahn-outline-color-tulpahn.png"
@@ -38,12 +46,12 @@ const CSVTable = ({ result }) => {
   }
 
   return (
-    <div className="relative w-11/12 h-5/6 overflow-auto scrollbar-thumb-slate-400  scrollbar-track-gray-400 bg-white m-8 border-solid border-2 border-stone-600 dark:bg-[#31304D]">
-      <table className="table-auto w-full ">
+    <div className="flex w-full h-[65vh] relative my-8 overflow-auto scrollbar-thumb-slate-400  scrollbar-track-gray-400 bg-white border-solid border-2 border-stone-600 dark:bg-[#31304D]">
+      <table className="relative table w-full h-full">
         <thead className="bg-gray-50 border-b-2 border-gray-200 dark:bg-[#31304D] dark:text-white">
           <tr>
             {header[0] &&
-              Object.values(header[0]).map((heading, i) => (
+              Object.values(header).map((heading, i) => (
                 <th
                   className="p-3 text-sm font-semibold tracking-wide text-left "
                   key={i}
@@ -67,6 +75,7 @@ const CSVTable = ({ result }) => {
       </table>
     </div>
   );
-};
+}
+);
 
 export default CSVTable;

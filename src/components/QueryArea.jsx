@@ -4,7 +4,6 @@ const QueryArea = ({ text, setText }) => {
  const handleInputChange = (event) => {
   if (event.target.value.length <= 10000) {
     setText(event.target.value);
-    
   }
  };
 
