@@ -40,7 +40,7 @@ const Hero = () => {
   };
   return (
     <div className="flex flex-col xl:flex-row items-center justify-around w-full dark:bg-[#282A36] pb-[1.05rem]">
-      <div className="w-full p-2 lg:w-[83vw] xl:w-2/5 h-full">
+      <div className="w-full p-2 lg:w-[82vw] xl:w-2/5 h-full">
           <h1 className="flex justify-center font-bold text-2xl -mb-4 dark:text-white">
             Query
           </h1>
@@ -78,7 +78,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full p-2 lg:w-[83vw] xl:w-5/12 h-full">
+      <div className="w-full p-2 lg:w-[82vw] xl:w-5/12 h-full">
         <h1 className="flex justify-center font-bold text-2xl -mb-2 dark:text-white">Result</h1>
         <CSVTable result={result} />
       </div>
