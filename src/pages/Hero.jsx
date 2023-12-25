@@ -4,8 +4,8 @@ import QueryArea from "../components/QueryArea";
 import CSVTable from "../components/QueryResult";
 import QueryButton from "../components/QueryButton";
 const Hero = () => {
-  const [result, setResult] = useState("D");
-  const [text, setText] = useState("select employeeid,lastname,firstname,address,city from employees");
+  const [result, setResult] = useState("A");
+  const [text, setText] = useState("SELECT * FROM EMPLOYEES");
   const handleRun = () => {
     if (text.trim() == "") {
       setResult("X");
