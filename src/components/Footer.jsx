@@ -3,7 +3,7 @@ export default function Footer() {
 	return (
 	  <footer className={`footer flex items-center justify-center p-5 mb-0  dark:bg-gray-800 dark:text-white bg-gray-200 text-gray-700 inset-x-0`}>
 		<div>
-		  <p>Copyright © {year} - Made by Jatin Kharbanda (for Atlan Assesment)</p>
+		  <p>Copyright © {year} - Made by Jatin Kharbanda (for Atlan Assessment)</p>
 		</div>
 	  </footer>
 	);
