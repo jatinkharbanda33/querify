@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { memo} from "react";
 
-const QueryArea = ({ text, setText }) => {
+const QueryArea = memo(({ text, setText }) => {
  const handleInputChange = (event) => {
   if (event.target.value.length <= 10000) {
     setText(event.target.value);
@@ -19,6 +19,5 @@ const QueryArea = ({ text, setText }) => {
     </div>
   </>
  );
-};
-
+});
 export default QueryArea;

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import QueryArea from "../components/QueryArea";
 import CSVTable from "../components/QueryResult";
 import QueryButton from "../components/QueryButton";
